@@ -23,7 +23,7 @@ jobs:
       - name: Check if issue exists
         id: issue-exists
         run: |
-          ISSUE_URL=$(gh issue list --repo ${{ github.repository }} --state all --search "Document Noir PR ${{ inputs.pr-number }} in:title" --json url --jq ".[0].url")
+          ISSUE_URL=$(gh issue list --repo ${{ github.repository }} --state all --search "Document PR ${{ inputs.pr-number }} in:title" --json url --jq ".[0].url")
           echo "issue-url=$ISSUE_URL" >> "$GITHUB_OUTPUT"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
